@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  animation: fadeIn 1.5s;
+}
+
+/* Light theme styles (default) */
+body {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Default font color */
+}
+
+.sidebar {
+  border-right: 1px solid yellow; /* Default border color for sidebar */
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White font color */
+}
+
+body.dark-theme .sidebar {
+  border-right: 4px red;
+  background-color: #121212;
+  color:white; /* Red border for dark theme */
+}
+
+
+/* Additional styles for dark theme */
+body.dark-theme .settings {
+  background-color: #1e1e1e; /* Darker background for settings */
+  color: #ffffff; /* White text color for settings */
+}
+body.dark-theme .main-container {
+  background-color: #121212;
+  color:white;
+}
+body.dark-theme .tab-content {
+  background-color: #121212;
+  color:white;
+}
+body.dark-theme .main {
+  background-color: #121212;
+  color:white;
+}
+body.dark-theme .explanation{
+  background-color: #121212;
+  color:white;
+}
+
+/* Ensure all components and elements adapt to dark theme */
+body.dark-theme .tab-content,
+body.dark-theme .recent,
+body.dark-theme .recent-title,
+body.dark-theme .recent-entry,
+body.dark-theme .bottom,
+body.dark-theme .result,
+body.dark-theme .result-title,
+body.dark-theme .result-data,
+body.dark-theme .bottom-item,
+
+
+body.dark-theme .top {
+  background-color: #121212; /* Dark background for these sections */
+  color: pink;
+   /* White text color */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styling for the switch component */
+body.dark-theme .switch {
+  background-color: #444444; /* Darker background for switch */
+}
+
+body.dark-theme .slider.round {
+  background-color: #ffffff; /* Slider color */
+}

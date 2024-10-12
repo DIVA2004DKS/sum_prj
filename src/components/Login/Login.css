@@ -1,0 +1,211 @@
+/* frontend/src/components/Login/Login.css */
+/*
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.submit-button, .toggle-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.toggle-button {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.vid {
+    width: 100%;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.9);
+}
+    */
+
+
+/* Centered Login Box Styling */
+.login-container {
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent for background video */
+    position: relative;
+    z-index: 2; /* Ensure login box stays above video */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for 3D effect */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+
+
+    border-radius: 5px; /* Rounded input fields */
+    border: 1px solid #ccc;
+}
+
+/* Button Styling */
+.submit-button, .toggle-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+
+    text-transform: uppercase; /* Make button text uppercase */
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease; /* Smooth background change on hover */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Slight color change on hover */
+}
+
+.toggle-button {
+    background-color: #f1f1f1;
+    color: #333;
+    transition: background-color 0.3s ease; /* Smooth background change on hover */
+}
+
+.toggle-button:hover {
+    background-color: #ddd;
+}
+
+/* Error Message Styling */
+.error {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+}
+
+/* Full-Screen Video Background */
+.vid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Keep the video and content fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Prevent any overflow */
+    z-index: 1; /* Make sure video stays below the login box */
+}
+
+/* Full-Screen Video Styling */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the video covers the entire background */
+    z-index: -1; /* Ensure the video is behind everything */
+}
+
+/* Dark Overlay to Enhance Text Visibility */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better readability */
+    z-index: 0;
+}
+
+/* Video Background Fallback for Old Browsers */
+@media screen and (max-width: 600px) {
+    .vid {
+        display: none;
+    }
+    .login-container {
+        background-color: #fff; /* In case video does not load */
+    }
+}

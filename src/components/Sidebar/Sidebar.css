@@ -1,0 +1,238 @@
+
+.sidebar {
+    min-height: 100vh;
+    display: inline-flex;
+    border-right:1px solid yellow;
+    border-left: 2px solid black; 
+    border-top: 2px solid black; 
+    border-bottom: 2px solid black; 
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    position: relative;
+    width: 80px; /* Initial collapsed width */
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar.expanded {
+    width: 300px;
+    background-color:rgb(242, 195, 78); /* Expanded width */
+}
+
+.sidebar.collapsed {
+    width: 80px;
+    background-color:goldenrod; /* Collapsed width */
+}
+
+.sidebar img {
+    width: 20px;
+}
+
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color:rgb(107, 240, 111);
+    border-radius: 50px;
+    border-color: black;
+    font-size: 14px;
+    color:rgb(245, 73, 73);
+    cursor: pointer;
+}
+
+/* Recent searches container */
+.sidebar .recent {
+    padding: 10px 15px;
+    border-color:black;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 300px); /* Create enough space for the new-chat button */
+    overflow-y: auto; /* Enable scrolling when content exceeds the container */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: relative;
+    margin-top: 20px; /* Add space between the recent container and new-chat */
+    margin-right: 8px; /* Ensure space for scrollbar */
+    border: 1px solid #ccc; /* Add a border for the recent container */
+}
+
+.sidebar .recent-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add the three dots '...' at the end */
+    margin-bottom: 10px; /* Ensure consistent spacing between entries */
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #e2e6eb;
+}
+
+/* Bottom items */
+.tab-content {
+    font-size: 16px; 
+    position: absolute;
+    color: white;
+    left: calc(100% + 10px); 
+    top: 85%; 
+    transform: translateY(-50%); 
+    background-color: rgb(243, 82, 82); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    width: auto; 
+    min-width: 150px; 
+    max-width: 300px; 
+    border-color:black;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tab-item {
+    background-color: #f5f5f5;
+    margin: 5px 0; 
+    padding: 10px; 
+    border-radius: 8px;
+    width: 100%; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333; 
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tab-item:hover {
+    background-color: #eaeaea; 
+}
+
+.sidebar .bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+}
+
+/* Bottom items styling */
+.sidebar .bottom-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px;
+    padding: 5px 10px; /* Add slight padding */
+    width: 100%; /* Ensure the buttons take full width */
+    cursor: pointer;
+    margin: 10px 0;
+    color: #282828;
+    text-align: left; /* Ensure text is aligned to the left */
+}
+
+/* Make sure the icons and text are aligned horizontally */
+.sidebar .bottom-item img {
+    display: inline-block;
+}
+
+.sidebar .bottom-item .inline-text {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Custom scrollbar styles */
+.sidebar .recent::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar .recent::-webkit-scrollbar-track {
+    background: #f0f4f9; /* Background color of the track */
+}
+
+.sidebar .recent::-webkit-scrollbar-thumb {
+    background: orange; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Round corners of the scrollbar thumb */
+}
+
+.sidebar .recent::-webkit-scrollbar-thumb:hover {
+    background: orangered; /* Color when hovering */
+}
+
+.recent-entry p {
+    white-space: nowrap;        /* Prevent text from wrapping */
+    overflow: hidden;           /* Hide the overflowed text */
+    text-overflow: ellipsis;    /* Add the three dots '...' at the end */
+    max-width: 100%;            /* Ensure it doesn't exceed the container's width */
+    margin: 0;                  /* Reset the margin to avoid unintended space */
+}
+.recent-entries {
+    max-height: 300px; /* Adjust the height as per your layout */
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+}
+
+.recent-entries::-webkit-scrollbar {
+    width: 8px;
+}
+
+.recent-entries::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 10px;
+}
+.recent-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.recent-entry p {
+    margin: 0;
+    cursor: pointer;
+    flex: 1; /* Allows the text to take up available space */
+}
+
+.delete-option {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+.delete-option:hover {
+    background-color: #b0b0b0;
+}
+
+.delete-option:active {
+    background-color: #a0a0a0;
+}
